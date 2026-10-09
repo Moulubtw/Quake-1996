@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QUAKE JS — рейкастинг-шутер</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+
+  <div id="stage">
+    <canvas id="screen" width="640" height="400"></canvas>
+
+    <!-- HUD -->
+    <div id="hud" class="hidden">
+      <div id="crosshair"></div>
+
+      <div class="hud-box hud-left">
+        <div class="hud-label">ЗДОРОВЬЕ</div>
+        <div id="health" class="hud-value">100</div>
+      </div>
+
+      <div class="hud-box hud-right">
+        <div class="hud-label">ПАТРОНЫ</div>
+        <div id="ammo" class="hud-value">50</div>
+      </div>
+
+      <div class="hud-score">ФРАГИ: <span id="score">0</span></div>
+      <div id="message"></div>
+      <div id="damage"></div>
+    </div>
+
+    <!-- Меню / пауза / смерть -->
+    <div id="overlay">
+      <h1 id="ovTitle">QUAKE<span>JS</span></h1>
+      <p id="ovSub">Рейкастинг-шутер от первого лица</p>
+
+      <div class="ov-buttons">
+        <button id="btnPlay">ИГРАТЬ</button>
+        <button id="btnEditor" class="secondary">РЕДАКТОР УРОВНЯ</button>
+      </div>
+
+      <div class="controls">
+        <div><b>W A S D</b> — движение</div>
+        <div><b>МЫШЬ</b> — обзор</div>
+        <div><b>ЛКМ</b> — выстрел</div>
+        <div><b>TAB</b> — редактор</div>
+        <div><b>ESC</b> — пауза</div>
+        <div><b>1..4 / 0</b> — тайлы в редакторе</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Панель редактора -->
+  <div id="editorbar" class="hidden">
+    <div class="eb-row">
+      <span class="eb-title">СТЕНЫ:</span>
+      <button class="tile-btn" data-tile="1">КИРПИЧ</button>
+      <button class="tile-btn" data-tile="2">КАМЕНЬ</button>
+      <button class="tile-btn" data-tile="3">МЕТАЛЛ</button>
+      <button class="tile-btn" data-tile="4">ТЕХНО</button>
+      <button class="tile-btn" data-tile="0">ЛАСТИК</button>
+    </div>
+
+    <div class="eb-row">
+      <span class="eb-title">ОБЪЕКТЫ:</span>
+      <button class="tile-btn" data-tile="P">СТАРТ ИГРОКА</button>
+      <button class="tile-btn" data-tile="E">ВРАГ</button>
+      <button class="tile-btn" data-tile="H">АПТЕЧКА</button>
+      <button class="tile-btn" data-tile="A">ПАТРОНЫ</button>
+    </div>
+
+    <div class="eb-row">
+      <button id="btnSave" class="act">СОХРАНИТЬ</button>
+      <button id="btnLoad" class="act">ЗАГРУЗИТЬ</button>
+      <button id="btnReset" class="act danger">СБРОС</button>
+      <button id="btnExitEditor" class="act primary">В ИГРУ</button>
+    </div>
+  </div>
+
+</div>
+
+<script src="game.js"></script>
+</body>
+</html>
